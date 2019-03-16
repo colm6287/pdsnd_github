@@ -39,6 +39,7 @@ What is the most popular trip?
 What are the counts of each user type?
 What are the counts of gender?
 What are the earliest (i.e. oldest person), most recent (i.e. youngest person), and most popular birth years?
+Would the user like to see more detailed trip data?
 
 ### Future scopes
 
