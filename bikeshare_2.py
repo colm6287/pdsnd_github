@@ -21,13 +21,10 @@ def get_filters():
        
     # get user input for city (chicago, new york, washington). HINT: Use a while loop to handle invalid inputs
     valid_cities = ['chicago', 'new york', 'washington']
-    while True:
-      city = input('Would you like to filter the data for Chicago, New York or Washington? \n').lower()
-      if city not in valid_cities:
-        print('Selection error! Please choose a vaild city \n')
-        continue
-      else:
-        break
+    while not city in valid_cities:
+        city = input('Would you like to filter the data for Chicago, New York or Washington? \n')
+        city = input('Selection error! Please choose a vaild city \n')
+    print("you chose %s." % city)
 
     # get user input for month (all, january, february, ... , june)
     valid_months = ['january', 'february', 'march', 'april', 'may', 'june', 'none']
@@ -142,8 +139,8 @@ def trip_duration_stats(df):
 
 
     # display mean travel time
-    mean_travel_time = df['Trip Duration'].mean()
-    print('Mean Travel Time:', mean_travel_time)
+    minimum_travel_time = df['Trip Duration'].min()
+    print('Minimum Travel Time:', minimum_travel_time)
 
 
     print("\nThis took %s seconds." % (time.time() - start_time))
